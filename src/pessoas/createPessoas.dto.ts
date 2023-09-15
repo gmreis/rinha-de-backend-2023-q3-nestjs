@@ -1,5 +1,10 @@
-import { Transform, Type } from "class-transformer";
-import { IsArray, IsDate, IsDateString, IsISO8601, IsOptional, IsString, Length } from "class-validator";
+import {
+  IsArray,
+  IsISO8601,
+  IsOptional,
+  IsString,
+  Length,
+} from 'class-validator';
 
 export class CreatePessoaDto {
   @IsString()
@@ -14,7 +19,7 @@ export class CreatePessoaDto {
   // TODO
   // @Type(() => Date)
   // nascimento: Date;
-  nascimento: string
+  nascimento: string;
 
   @IsArray()
   @IsString({ each: true })
