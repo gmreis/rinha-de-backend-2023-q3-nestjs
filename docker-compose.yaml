@@ -44,8 +44,14 @@ services:
           memory: '0.5GB'
 
   db:
-   image: postgres:15.4-alpine3.18
-   deploy:
+    image: postgres:15.4-alpine3.18
+    environment:
+      - POSTGRES_DB=rinha
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=strongpassword
+    ports:
+      - "5432:5432"
+    deploy:
       resources:
         limits:
           cpus: '0.75'
